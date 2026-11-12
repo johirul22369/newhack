@@ -2,511 +2,498 @@
 <html lang="bn">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>♚𝗢𝗪𝗡𝗘𝗥 𝗢𝗙 𝗝𝗢𝗬【𝟐𝐱™️】VIP Hack</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>♚𝗢𝗪𝗡𝗘𝗥 𝗢𝗙 𝗝𝗢𝗬【𝟐𝐱™️】VIP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
         }
 
-        body {
-            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            align-items: center;
-            overflow: hidden;
-            position: relative;
-        }
-
-        /* Exact Background Matching Target Link Style */
-        .bg-wrapper {
-            position: absolute;
-            top: 0;
-            left: 0;
+        body, html {
             width: 100%;
             height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            z-index: 1;
-            pointer-events: none;
             overflow: hidden;
-        }
-
-        .sports-banner-img {
-            width: 100%;
-            max-width: 600px;
-            height: auto;
-            opacity: 0.85;
-            object-fit: contain;
-            margin-bottom: 20px;
-        }
-
-        .sub-text {
-            color: #d63031;
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            letter-spacing: 0.5px;
-        }
-
-        .main-brand-logo {
+            background: #ff9a9e;
             font-family: 'Orbitron', sans-serif;
-            font-size: 3rem;
-            font-weight: 900;
-            color: #d63031;
-            letter-spacing: 2px;
-            margin-bottom: 40px;
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.15);
         }
 
-        /* Password Modal */
-        #auth-modal {
+        /* Fullscreen Live Site Iframe (Exact like the Vercel link) */
+        #game-frame {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.85);
+            border: none;
+            z-index: 1;
+        }
+
+        /* Password Lock Screen */
+        #lock-screen {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
             display: flex;
             justify-content: center;
             align-items: center;
-            z-index: 9999;
+            z-index: 99999;
         }
 
-        .auth-box {
-            background: #111;
+        .lock-box {
+            width: 88%;
+            max-width: 330px;
+            background: radial-gradient(circle at top, #2a2100, #080808);
             border: 2px solid #ffd700;
-            padding: 30px;
-            border-radius: 15px;
+            border-radius: 18px;
+            padding: 25px 20px;
             text-align: center;
-            box-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
-            width: 90%;
-            max-width: 350px;
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.7), inset 0 0 15px rgba(255, 215, 0, 0.3);
         }
 
-        .auth-box h3 {
+        .lock-box img {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            border: 2px solid #ffd700;
+            box-shadow: 0 0 15px #ffd700;
+            margin-bottom: 12px;
+        }
+
+        .lock-box h2 {
             color: #ffd700;
+            font-size: 0.95rem;
             margin-bottom: 15px;
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.2rem;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
         }
 
-        .auth-box input {
+        .lock-box input {
             width: 100%;
-            padding: 12px;
-            background: #222;
-            border: 1px solid #ffd700;
-            color: #fff;
-            border-radius: 8px;
+            padding: 11px;
+            background: #000;
+            border: 1.5px solid #ffd700;
+            border-radius: 10px;
+            color: #ffd700;
+            font-family: 'Poppins', sans-serif;
             font-size: 1rem;
             text-align: center;
-            margin-bottom: 15px;
             outline: none;
+            margin-bottom: 14px;
+            box-shadow: inset 0 0 8px rgba(255, 215, 0, 0.3);
         }
 
-        .auth-box button {
-            background: linear-gradient(135deg, #f39c12, #f1c40f);
-            color: #000;
-            border: none;
-            padding: 10px 20px;
-            font-weight: bold;
-            border-radius: 8px;
-            cursor: pointer;
+        .lock-box button {
             width: 100%;
-            font-size: 1rem;
-            transition: 0.3s;
+            padding: 11px;
+            background: linear-gradient(90deg, #b8860b, #ffd700, #b8860b);
+            border: none;
+            border-radius: 10px;
+            color: #000;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 900;
+            font-size: 0.95rem;
+            cursor: pointer;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
         }
 
-        .error-msg {
-            color: #ff4d4d;
-            font-size: 0.85rem;
+        #err-msg {
+            color: #ff4757;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.8rem;
             margin-top: 10px;
             display: none;
         }
 
-        /* VIP Popup Box (Exact Replica) */
-        #vip-popup {
-            position: absolute;
-            top: 28%;
-            left: 28%;
-            transform: translate(-50%, -50%);
-            width: 300px;
-            background: linear-gradient(145deg, #141414, #050505);
-            border: 3px solid #ffd700;
-            border-radius: 14px;
-            box-shadow: 0 0 30px rgba(255, 215, 0, 0.7), inset 0 0 15px rgba(255, 215, 0, 0.2);
-            z-index: 1000;
+        /* Exact Screenshot Golden Neon VIP Popup */
+        #vip-box {
+            position: fixed;
+            top: 22%;
+            left: 15px;
+            width: 265px;
+            background: radial-gradient(circle at center, #261e00 0%, #090700 85%);
+            border: 2.5px solid #ffe600;
+            border-radius: 16px;
+            box-shadow: 
+                0 0 18px #ffd700,
+                0 0 35px rgba(255, 200, 0, 0.6),
+                inset 0 0 18px rgba(255, 215, 0, 0.45);
+            z-index: 10000;
             display: none;
-            user-select: none;
-            overflow: hidden;
+            padding: 7px;
+            touch-action: none;
         }
 
-        /* Header Bar */
-        .vip-header {
-            background: linear-gradient(90deg, #b8860b, #ffd700, #b8860b);
-            color: #000;
-            padding: 7px 10px;
+        /* Top Title Bar */
+        .top-title {
+            background: linear-gradient(90deg, rgba(255,215,0,0.15), rgba(255,215,0,0.35), rgba(255,215,0,0.15));
+            border: 1.5px solid #ffd700;
+            border-radius: 10px;
+            padding: 5px 6px;
+            text-align: center;
+            color: #fff275;
+            font-size: 0.63rem;
+            font-weight: 900;
+            text-shadow: 0 0 8px #ffd700;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+            cursor: move;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Status Row: LIVE | MOD: ON | PING: 12MS */
+        .status-row {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-weight: 900;
-            font-family: 'Orbitron', sans-serif;
-            font-size: 0.7rem;
-            cursor: move;
-            border-bottom: 2px solid #996515;
-            text-transform: uppercase;
+            padding: 6px 4px 4px 4px;
+            font-size: 0.56rem;
+            font-weight: 800;
+            color: #fff;
         }
 
-        /* Status Bar */
-        .status-bar {
-            display: flex;
-            justify-content: space-between;
-            padding: 6px 10px;
-            background: rgba(0, 0, 0, 0.8);
-            font-size: 0.65rem;
-            border-bottom: 1px solid rgba(255, 215, 0, 0.2);
-        }
-
-        .status-item {
+        .live-badge {
             display: flex;
             align-items: center;
             gap: 4px;
-            color: #fff;
-            font-weight: 600;
+            color: #ffe600;
         }
 
-        .dot {
-            width: 7px;
-            height: 7px;
-            background: #00ff00;
+        .live-dot {
+            width: 6px;
+            height: 6px;
+            background: #ffeb3b;
             border-radius: 50%;
-            box-shadow: 0 0 8px #00ff00;
-            animation: pulse 1.5s infinite;
+            box-shadow: 0 0 6px #ffeb3b;
+            animation: blink 1s infinite;
         }
 
-        .mod-on {
-            color: #00ff00;
-            font-family: 'Orbitron', sans-serif;
-            font-weight: bold;
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.2; }
         }
 
-        .ping {
-            color: #00ffff;
-            font-family: 'Orbitron', sans-serif;
-            font-weight: bold;
-        }
+        .mod-txt span { color: #00ff66; text-shadow: 0 0 5px #00ff66; }
+        .ping-txt span { color: #00f0ff; text-shadow: 0 0 5px #00f0ff; }
 
-        @keyframes pulse {
-            0% { opacity: 1; }
-            50% { opacity: 0.3; }
-            100% { opacity: 1; }
-        }
-
-        /* Main Signal Display Screen */
-        .signal-screen {
-            margin: 8px;
-            background: #000;
-            border: 2px solid #ffd700;
-            border-radius: 8px;
-            padding: 10px;
-            text-align: center;
+        /* Center Prediction Area */
+        .pred-center {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 8px 6px;
             position: relative;
-            box-shadow: inset 0 0 12px rgba(255, 215, 0, 0.3);
         }
 
-        .big-text {
-            font-size: 2.3rem;
+        .result-word {
+            font-size: 2rem;
             font-weight: 900;
-            font-family: 'Orbitron', sans-serif;
-            color: #ffeb3b;
-            text-shadow: 0 0 10px #ff9800, 0 0 20px #ff5722;
-            letter-spacing: 2px;
             font-style: italic;
+            color: #fff799;
+            text-shadow: 0 0 10px #ffd700, 0 0 22px #ffae00;
+            letter-spacing: 1px;
         }
 
-        .number-badge {
-            position: absolute;
-            right: 12px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 38px;
-            height: 38px;
-            background: radial-gradient(circle, #ffeb3b, #f57c00);
-            border: 2px solid #fff;
+        /* Glowing Orb Number Badge */
+        .orb-ring {
+            width: 52px;
+            height: 52px;
             border-radius: 50%;
+            border: 2px solid #ffd700;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 15px #ffd700, inset 0 0 10px #ffd700;
+            background: radial-gradient(circle, rgba(255,215,0,0.35), transparent);
+            position: relative;
+        }
+
+        .orb-inner {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ff007f, #ffae00, #00e5ff);
+            border: 2px solid #fff;
             display: flex;
             justify-content: center;
             align-items: center;
             font-size: 1.2rem;
             font-weight: 900;
-            font-family: 'Orbitron', sans-serif;
-            color: #000;
-            box-shadow: 0 0 10px #ff9800;
+            color: #fff;
+            text-shadow: 0 1px 3px #000;
+            box-shadow: 0 0 10px #fff;
         }
 
-        /* Period Info */
-        .period-box {
-            margin-top: 6px;
-            background: rgba(255, 215, 0, 0.1);
-            border: 1px dashed rgba(255, 215, 0, 0.5);
-            padding: 3px;
-            border-radius: 4px;
-            font-size: 0.7rem;
-            color: #ffd700;
-            font-family: 'Orbitron', sans-serif;
-        }
-
-        /* Control Buttons */
-        .controls {
-            padding: 6px 10px;
+        /* Period Bar: << PERIOD : 0482 >> */
+        .period-bar {
             display: flex;
+            justify-content: center;
+            align-items: center;
             gap: 8px;
+            background: rgba(0, 0, 0, 0.75);
+            border: 1px solid #ffd700;
+            border-radius: 20px;
+            padding: 3px 10px;
+            margin: 2px auto 8px auto;
+            width: 88%;
+            font-size: 0.62rem;
+            font-weight: 800;
+            color: #ffe600;
+            box-shadow: 0 0 8px rgba(255, 215, 0, 0.35);
         }
 
-        .btn {
+        .arrows {
+            color: #ffd700;
+            font-weight: 900;
+        }
+
+        /* Pill Buttons: AGAIN & HIDE */
+        .btn-row {
+            display: flex;
+            gap: 7px;
+            margin-bottom: 7px;
+        }
+
+        .pill-btn {
             flex: 1;
-            padding: 7px;
-            border-radius: 6px;
-            font-weight: bold;
-            font-size: 0.75rem;
-            cursor: pointer;
-            border: 2px solid #ffd700;
+            padding: 7px 4px;
+            border-radius: 20px;
+            border: 1.5px solid #ffd700;
             font-family: 'Orbitron', sans-serif;
-            transition: 0.2s;
+            font-size: 0.68rem;
+            font-weight: 900;
+            font-style: italic;
+            cursor: pointer;
             display: flex;
             justify-content: center;
             align-items: center;
             gap: 4px;
-            text-transform: uppercase;
+            transition: transform 0.15s;
+        }
+
+        .pill-btn:active {
+            transform: scale(0.95);
         }
 
         .btn-again {
-            background: linear-gradient(135deg, #ffe600, #ffb300);
-            color: #000;
-            box-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
+            background: linear-gradient(180deg, #b59b00, #5e4f00);
+            color: #fff;
+            box-shadow: 0 0 12px rgba(255, 215, 0, 0.6), inset 0 0 6px #ffd700;
         }
 
         .btn-hide {
-            background: rgba(0, 0, 0, 0.8);
-            color: #ffd700;
+            background: linear-gradient(180deg, #1f1b00, #080700);
+            color: #fff275;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.4), inset 0 0 5px rgba(255, 215, 0, 0.3);
         }
 
-        .btn:hover {
-            filter: brightness(1.2);
-        }
-
-        /* Join Now Button */
-        .join-container {
-            padding: 0 10px 10px 10px;
-        }
-
-        .btn-join {
-            width: 100%;
-            background: linear-gradient(135deg, #000, #222);
-            color: #ffd700;
-            border: 2px solid #ffd700;
-            padding: 8px;
-            border-radius: 8px;
-            font-family: 'Orbitron', sans-serif;
-            font-weight: 900;
-            font-size: 0.85rem;
-            cursor: pointer;
-            box-shadow: 0 0 12px rgba(255, 215, 0, 0.5);
+        /* Bottom Pill Button: >> JOIN NOW << */
+        .join-btn {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
+            width: 100%;
+            padding: 8px;
+            border-radius: 22px;
+            background: linear-gradient(180deg, #2b2300, #0a0800);
+            border: 1.5px solid #ffd700;
+            color: #ffe600;
             text-decoration: none;
-            transition: 0.3s;
+            font-size: 0.75rem;
+            font-weight: 900;
+            font-style: italic;
+            text-shadow: 0 0 8px #ffd700;
+            box-shadow: 0 0 14px rgba(255, 215, 0, 0.65), inset 0 0 8px rgba(255, 215, 0, 0.4);
         }
 
-        .btn-join:hover {
-            background: #ffd700;
-            color: #000;
+        .join-btn:active {
+            transform: scale(0.96);
         }
 
-        /* Floating Icon when Minimized */
-        #floating-icon {
+        /* Minimized Floating Custom Icon */
+        #mini-icon {
             position: fixed;
-            bottom: 25px;
-            right: 25px;
-            width: 55px;
-            height: 55px;
-            background: #000;
-            border: 2px solid #ffd700;
+            top: 30%;
+            left: 15px;
+            width: 56px;
+            height: 56px;
             border-radius: 50%;
-            cursor: pointer;
+            border: 2.5px solid #ffd700;
+            background: #000;
+            box-shadow: 0 0 18px #ffd700, 0 0 30px rgba(255, 215, 0, 0.7);
+            z-index: 10001;
             display: none;
             justify-content: center;
             align-items: center;
-            box-shadow: 0 0 15px rgba(255, 215, 0, 0.9);
-            z-index: 1001;
-            animation: floatAnim 2s infinite ease-in-out;
+            cursor: pointer;
+            touch-action: none;
+            overflow: hidden;
         }
 
-        #floating-icon img {
-            width: 75%;
-            height: 75%;
-            object-fit: contain;
-            border-radius: 50%;
-        }
-
-        @keyframes floatAnim {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-6px); }
+        #mini-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            pointer-events: none;
         }
     </style>
 </head>
 <body>
 
-    <!-- Exact Target Background Layout -->
-    <div class="bg-wrapper">
-        <!-- Using the precise visual asset matching the layout -->
-        <img src="https://images.unsplash.com/photo-1517649763962-0c623266cf10?q=80&w=800&auto=format&fit=crop" class="sports-banner-img" alt="Sports Banner">
-        <div class="sub-text">Withdraw fast, safe and stable</div>
-        <div class="main-brand-logo">HIGNICE</div>
-    </div>
+    <!-- Live Background Website (Exact like the reference link) -->
+    <iframe id="game-frame" src="https://hgnice.bet/#/register?invitationCode=376851951983"></iframe>
 
-    <!-- Password Modal -->
-    <div id="auth-modal">
-        <div class="auth-box">
-            <h3>🔒 ENTER PASSWORD</h3>
-            <input type="password" id="pass-input" placeholder="Password দিন...">
-            <button onclick="checkPassword()">UNLOCK</button>
-            <div id="error-msg" class="error-msg">পাসওয়ার্ড ভুল হয়েছে! আবার চেষ্টা করুন।</div>
+    <!-- Password Gate -->
+    <div id="lock-screen">
+        <div class="lock-box">
+            <img src="https://cdn.imageurlgenerator.com/uploads/0fa5fcf8-6a22-42b0-8e9e-819826a1494b.png" alt="Logo">
+            <h2>♚𝗢𝗪𝗡𝗘𝗥 𝗢𝗙 𝗝𝗢𝗬【𝟐𝐱™️】</h2>
+            <input type="password" id="pwd" placeholder="Enter Access Password">
+            <button onclick="unlockApp()">ACTIVATE VIP</button>
+            <div id="err-msg">ভুল পাসওয়ার্ড! সঠিক পাসওয়ার্ড দিন।</div>
         </div>
     </div>
 
-    <!-- VIP Popup -->
-    <div id="vip-popup">
-        <div class="vip-header" id="popup-header">
-            <span>👑 𝗢𝗪𝗡𝗘𝗥 𝗢𝗙 𝗝𝗢𝗬【𝟐𝐱™️】</span>
-            <span style="font-size: 0.85rem; cursor: pointer;" onclick="hidePopup()">❌</span>
-        </div>
-        
-        <div class="status-bar">
-            <div class="status-item"><span class="dot"></span> LIVE</div>
-            <div class="status-item">MOD: <span class="mod-on">ON</span></div>
-            <div class="status-item">PING: <span class="ping" id="ping-val">12MS</span></div>
+    <!-- Floating Golden Neon Popup -->
+    <div id="vip-box">
+        <div class="top-title" id="drag-handle">
+            👑 ♚𝗢𝗪𝗡𝗘𝗥 𝗢𝗙 𝗝𝗢𝗬【𝟐𝐱™️】 👑
         </div>
 
-        <div class="signal-screen">
-            <div class="big-text" id="signal-text">BIG</div>
-            <div class="number-badge" id="signal-num">5</div>
-            <div class="period-box">
-                PERIOD: <span id="period-val">0482</span>
+        <div class="status-row">
+            <div class="live-badge"><span class="live-dot"></span> LIVE</div>
+            <div class="mod-txt">MOD : <span>ON</span></div>
+            <div class="ping-txt">PING : <span id="ping-num">12MS</span></div>
+        </div>
+
+        <div class="pred-center">
+            <div class="result-word" id="res-word">BIG</div>
+            <div class="orb-ring">
+                <div class="orb-inner" id="res-num">5</div>
             </div>
         </div>
 
-        <div class="controls">
-            <button class="btn btn-again" onclick="generateSignal()">🔄 AGAIN</button>
-            <button class="btn btn-hide" onclick="hidePopup()">👁️ HIDE</button>
+        <div class="period-bar">
+            <span class="arrows">&lt;&lt;</span>
+            <span>PERIOD : <span id="period-txt">0482</span></span>
+            <span class="arrows">&gt;&gt;</span>
         </div>
 
-        <div class="join-container">
-            <a href="https://hgnice.bet/#/register?invitationCode=376851951983" target="_blank" class="btn-join">
-                🚀 JOIN NOW (@BDT588)
-            </a>
+        <div class="btn-row">
+            <button class="pill-btn btn-again" onclick="nextSignal()">↻ AGAIN</button>
+            <button class="pill-btn btn-hide" onclick="minimizeBox()">👁 HIDE</button>
         </div>
+
+        <a href="https://t.me/BDT588" target="_blank" class="join-btn">
+            <span>&gt;&gt;</span>
+            <span>🕷 JOIN NOW</span>
+            <span>&lt;&lt;</span>
+        </a>
     </div>
 
-    <!-- Floating Icon with your custom image -->
-    <div id="floating-icon" onclick="showPopup()">
-        <img src="https://cdn.imageurlgenerator.com/uploads/0fa5fcf8-6a22-42b0-8e9e-819826a1494b.png" alt="Icon">
+    <!-- Custom Floating Icon -->
+    <div id="mini-icon">
+        <img src="https://cdn.imageurlgenerator.com/uploads/0fa5fcf8-6a22-42b0-8e9e-819826a1494b.png" alt="VIP">
     </div>
 
     <script>
-        function checkPassword() {
-            const inputVal = document.getElementById('pass-input').value;
-            const correctPass = "Zahirul22369";
-
-            if (inputVal === correctPass) {
-                document.getElementById('auth-modal').style.display = 'none';
-                document.getElementById('vip-popup').style.display = 'block';
-                startLiveUpdates();
+        // Unlock Logic
+        function unlockApp() {
+            const val = document.getElementById('pwd').value.trim();
+            if (val === "Zahirul22369") {
+                document.getElementById('lock-screen').style.display = 'none';
+                document.getElementById('vip-box').style.display = 'block';
+                updatePeriodAuto();
+                setInterval(() => {
+                    const p = Math.floor(Math.random() * (18 - 9 + 1)) + 9;
+                    document.getElementById('ping-num').innerText = p + "MS";
+                }, 2500);
             } else {
-                document.getElementById('error-msg').style.display = 'block';
+                document.getElementById('err-msg').style.display = 'block';
             }
         }
 
-        function hidePopup() {
-            document.getElementById('vip-popup').style.display = 'none';
-            document.getElementById('floating-icon').style.display = 'flex';
+        // Auto 1-Minute Wingo Period Sync
+        function updatePeriodAuto() {
+            const now = new Date();
+            const totalMinutes = now.getUTCHours() * 60 + now.getUTCMinutes() + 1;
+            const periodStr = String(totalMinutes).padStart(4, '0');
+            document.getElementById('period-txt').innerText = periodStr;
         }
 
-        function showPopup() {
-            document.getElementById('vip-popup').style.display = 'block';
-            document.getElementById('floating-icon').style.display = 'none';
+        // Signal Generator (BIG = 5-9, SMALL = 0-4)
+        function nextSignal() {
+            updatePeriodAuto();
+            const num = Math.floor(Math.random() * 10);
+            const word = num >= 5 ? "BIG" : "SMALL";
+            document.getElementById('res-word').innerText = word;
+            document.getElementById('res-num').innerText = num;
         }
 
-        function generateSignal() {
-            const signals = ["BIG", "SMALL"];
-            const randomSignal = signals[Math.floor(Math.random() * signals.length)];
-            const randomNum = Math.floor(Math.random() * 10);
-            const randomPeriod = Math.floor(1000 + Math.random() * 9000);
-
-            document.getElementById('signal-text').innerText = randomSignal;
-            document.getElementById('signal-num').innerText = randomNum;
-            document.getElementById('period-val').innerText = randomPeriod;
+        // Hide / Show Popup
+        function minimizeBox() {
+            document.getElementById('vip-box').style.display = 'none';
+            document.getElementById('mini-icon').style.display = 'flex';
         }
 
-        function startLiveUpdates() {
-            setInterval(() => {
-                const pings = [11, 12, 13, 15, 14, 12];
-                document.getElementById('ping-val').innerText = pings[Math.floor(Math.random() * pings.length)] + 'MS';
-            }, 3000);
+        function restoreBox() {
+            document.getElementById('mini-icon').style.display = 'none';
+            document.getElementById('vip-box').style.display = 'block';
         }
 
-        // Drag functionality (Mouse & Touch)
-        const popup = document.getElementById('vip-popup');
-        const header = document.getElementById('popup-header');
+        // Make Any Element Smoothly Draggable (Touch & Mouse)
+        function makeDraggable(el, handle, onClickCallback) {
+            let startX = 0, startY = 0, initLeft = 0, initTop = 0, moved = false;
 
-        let isDragging = false, startX, startY, initialX, initialY;
+            const onStart = (e) => {
+                moved = false;
+                const touch = e.type.includes('touch') ? e.touches[0] : e;
+                startX = touch.clientX;
+                startY = touch.clientY;
+                const rect = el.getBoundingClientRect();
+                initLeft = rect.left;
+                initTop = rect.top;
 
-        header.addEventListener('mousedown', dragStart);
-        document.addEventListener('mousemove', drag);
-        document.addEventListener('mouseup', dragEnd);
+                document.addEventListener('mousemove', onMove);
+                document.addEventListener('mouseup', onEnd);
+                document.addEventListener('touchmove', onMove, { passive: false });
+                document.addEventListener('touchend', onEnd);
+            };
 
-        header.addEventListener('touchstart', dragStart);
-        document.addEventListener('touchmove', drag);
-        document.addEventListener('touchend', dragEnd);
+            const onMove = (e) => {
+                const touch = e.type.includes('touch') ? e.touches[0] : e;
+                const dx = touch.clientX - startX;
+                const dy = touch.clientY - startY;
+                if (Math.abs(dx) > 4 || Math.abs(dy) > 4) moved = true;
+                if (e.cancelable) e.preventDefault();
+                el.style.left = (initLeft + dx) + 'px';
+                el.style.top = (initTop + dy) + 'px';
+            };
 
-        function dragStart(e) {
-            isDragging = true;
-            startX = e.type === 'touchstart' ? e.touches[0].clientX : e.clientX;
-            startY = e.type === 'touchstart' ? e.touches[0].clientY : e.clientY;
-            
-            const rect = popup.getBoundingClientRect();
-            initialX = rect.left + rect.width / 2;
-            initialY = rect.top + rect.height / 2;
-            
-            popup.style.transform = 'translate(-50%, -50%)';
-            e.preventDefault();
+            const onEnd = () => {
+                document.removeEventListener('mousemove', onMove);
+                document.removeEventListener('mouseup', onEnd);
+                document.removeEventListener('touchmove', onMove);
+                document.removeEventListener('touchend', onEnd);
+                if (!moved && onClickCallback) onClickCallback();
+            };
+
+            handle.addEventListener('mousedown', onStart);
+            handle.addEventListener('touchstart', onStart, { passive: true });
         }
 
-        function drag(e) {
-            if (!isDragging) return;
-            const currentX = e.type === 'touchmove' ? e.touches[0].clientX : e.clientX;
-            const currentY = e.type === 'touchmove' ? e.touches[0].clientY : e.clientY;
+        const vipBox = document.getElementById('vip-box');
+        const dragHandle = document.getElementById('drag-handle');
+        const miniIcon = document.getElementById('mini-icon');
 
-            const dx = currentX - startX;
-            const dy = currentY - startY;
-
-            popup.style.left = (initialX + dx) + 'px';
-            popup.style.top = (initialY + dy) + 'px';
-        }
-
-        function dragEnd() {
-            isDragging = false;
-        }
+        makeDraggable(vipBox, dragHandle, null);
+        makeDraggable(miniIcon, miniIcon, restoreBox);
     </script>
 </body>
 </html>
