@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>♚𝗢𝗪𝗡𝗘𝗥 𝗢𝗙 𝗝𝗢𝗬【𝟐𝐱™️】 VIP Overlay</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Orbitron:wght@600;800;900&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #0b0b0e;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Background Iframe & Fallback */
+        #bg-frame {
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            z-index: 1;
+        }
+
+        .fallback-bg {
+            position: fixed;
+            inset: 0;
+            background: radial-gradient(circle at 50% 35%, #2b1d0e 0%, #120d08 55%, #050505 100%);
+            z-index: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Golden Neon VIP Popup Styling */
+        .vip-card {
+            position: fixed;
+            top: 90px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 310px;
+            max-width: 92vw;
+            background: radial-gradient(circle at 50% 45%, rgba(45, 34, 4, 0.94) 0%, rgba(10, 10, 10, 0.96) 75%);
+            border-radius: 18px;
+            border: 2px solid #ffd700;
+            box-shadow: 
+                0 0 15px rgba(255, 215, 0, 0.75),
+                0 0 35px rgba(255, 180, 0, 0.45),
+                inset 0 0 18px rgba(255, 215, 0, 0.4);
+            z-index: 9999;
+            padding: 12px;
+            color: #fff;
+            touch-action: none;
+            animation: cardAura 3s infinite alternate ease-in-out;
+        }
+
+        /* Inner Double Border Effect */
+        .vip-card::before {
+            content: "";
+            position: absolute;
+            inset: 4px;
+            border-radius: 14px;
+            border: 1px solid rgba(255, 230, 100, 0.55);
+            pointer-events: none;
+        }
+
+        @keyframes cardAura {
+            0% {
+                box-shadow: 0 0 14px rgba(255, 215, 0, 0.7), 0 0 30px rgba(255, 170, 0, 0.4), inset 0 0 14px rgba(255, 215, 0, 0.35);
+            }
+            100% {
+                box-shadow: 0 0 22px rgba(255, 230, 50, 0.95), 0 0 48px rgba(255, 190, 0, 0.65), inset 0 0 22px rgba(255, 215, 0, 0.55);
+            }
+        }
+
+        /* Top Title Banner */
+        .vip-header {
+            background: linear-gradient(180deg, rgba(60, 45, 5, 0.95) 0%, rgba(20, 15, 2, 0.95) 100%);
+            border: 1.5px solid #ffd700;
+            border-radius: 10px;
+            padding: 5px 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.45);
+            cursor: grab;
+        }
+
+        .vip-header:active {
+            cursor: grabbing;
+        }
+
+        .vip-title-text {
+            font-size: 11.5px;
+            font-weight: 800;
+            color: #fff3a1;
+            text-shadow: 0 0 8px #ffd700, 0 0 14px #ffae00;
+            letter-spacing: 0.4px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Prediction Text & Glowing Orb */
+        .big-small-text {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 38px;
+            font-weight: 900;
+            font-style: italic;
+            color: #fff9d6;
+            text-shadow: 
+                0 0 10px #ffd700,
+                0 0 22px #ffae00,
+                0 2px 4px rgba(0, 0, 0, 0.9);
+            letter-spacing: 1px;
+            transition: all 0.25s ease;
+        }
+
+        .orb-wrapper {
+            position: relative;
+            width: 72px;
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Golden Orbital Rings */
+        .orbit-ring-1 {
+            position: absolute;
+            width: 86px;
+            height: 30px;
+            border: 2px solid rgba(255, 225, 80, 0.85);
+            border-radius: 50%;
+            box-shadow: 0 0 10px #ffd700;
+            transform: rotate(-18deg);
+            animation: spinOrbit1 4s linear infinite;
+            pointer-events: none;
+        }
+
+        .orbit-ring-2 {
+            position: absolute;
+            width: 82px;
+            height: 28px;
+            border: 1.5px solid rgba(255, 200, 50, 0.7);
+            border-radius: 50%;
+            box-shadow: 0 0 8px #ffae00;
+            transform: rotate(22deg);
+            animation: spinOrbit2 5s linear infinite reverse;
+            pointer-events: none;
+        }
+
+        @keyframes spinOrbit1 {
+            0% { transform: rotate(-18deg) scale(1); }
+            50% { transform: rotate(-12deg) scale(1.05); }
+            100% { transform: rotate(-18deg) scale(1); }
+        }
+
+        @keyframes spinOrbit2 {
+            0% { transform: rotate(22deg) scale(1); }
+            50% { transform: rotate(28deg) scale(1.04); }
+            100% { transform: rotate(22deg) scale(1); }
+        }
+
+        .number-orb {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: conic-gradient(from 0deg, #ff2a85, #ffae00, #00e676, #00b0ff, #d500f9, #ff2a85);
+            padding: 4px;
+            box-shadow: 0 0 18px #ffd700, inset 0 0 8px #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .number-orb-inner {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: radial-gradient(circle at 35% 35%, #ffffff 0%, #ffd54f 45%, #e65100 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 24px;
+            font-weight: 900;
+            color: #4a1c00;
+            text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+            box-shadow: inset 0 2px 6px rgba(0,0,0,0.4);
+        }
+
+        /* Period Box */
+        .period-box {
+            background: linear-gradient(90deg, rgba(20,16,4,0.9), rgba(55,42,8,0.95), rgba(20,16,4,0.9));
+            border: 1px solid #ffd700;
+            border-radius: 8px;
+            padding: 3px 12px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            color: #ffe875;
+            box-shadow: 0 0 8px rgba(255, 215, 0, 0.35);
+            letter-spacing: 0.8px;
+        }
+
+        /* Golden Pill Buttons */
+        .btn-gold-glow {
+            background: linear-gradient(180deg, #755b0c 0%, #3d2e04 50%, #5c4607 100%);
+            border: 1.5px solid #ffe44d;
+            border-radius: 9999px;
+            color: #fffbe0;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 800;
+            font-size: 12px;
+            letter-spacing: 0.6px;
+            box-shadow: 0 0 12px rgba(255, 215, 0, 0.65), inset 0 0 8px rgba(255, 230, 100, 0.5);
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+            cursor: pointer;
+        }
+
+        .btn-gold-glow:active {
+            transform: scale(0.95);
+        }
+
+        .btn-dark-gold {
+            background: linear-gradient(180deg, #1f1b10 0%, #0d0b06 100%);
+            border: 1.5px solid #d4af37;
+            border-radius: 9999px;
+            color: #ffe875;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 800;
+            font-size: 12px;
+            letter-spacing: 0.6px;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.35), inset 0 0 6px rgba(255, 215, 0, 0.25);
+            transition: transform 0.15s ease;
+            cursor: pointer;
+        }
+
+        .btn-dark-gold:active {
+            transform: scale(0.95);
+        }
+
+        .btn-join-now {
+            background: linear-gradient(180deg, #473706 0%, #1c1502 50%, #3d2f05 100%);
+            border: 1.5px solid #ffd700;
+            border-radius: 9999px;
+            color: #fff6b3;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 900;
+            font-size: 13.5px;
+            letter-spacing: 1px;
+            text-shadow: 0 0 8px #ffd700;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.7), inset 0 0 10px rgba(255, 215, 0, 0.45);
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+
+        .btn-join-now:hover {
+            box-shadow: 0 0 22px rgba(255, 230, 60, 0.95), inset 0 0 14px rgba(255, 215, 0, 0.7);
+        }
+
+        /* Minimized Floating Icon */
+        .minimized-fab {
+            position: fixed;
+            top: 110px;
+            left: 20px;
+            width: 62px;
+            height: 62px;
+            border-radius: 50%;
+            background: #0a0a0a;
+            border: 2.5px solid #ffd700;
+            box-shadow: 0 0 18px #ffd700, 0 0 32px rgba(255, 180, 0, 0.7);
+            z-index: 9999;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            touch-action: none;
+            padding: 3px;
+            animation: cardAura 2s infinite alternate;
+        }
+
+        .minimized-fab img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        /* Scanning Pulse Animation */
+        .scanning-blur {
+            filter: blur(3px);
+            opacity: 0.6;
+            transform: scale(0.94);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Clean Fallback UI if Iframe embedding is blocked by X-Frame-Options -->
+    <div class="fallback-bg">
+        <div class="max-w-md w-full p-6 rounded-2xl border border-yellow-500/30 bg-black/60 backdrop-blur-md shadow-2xl">
+            <img src="https://cdn.imageurlgenerator.com/uploads/0fa5fcf8-6a22-42b0-8e9e-819826a1494b.png" 
+                 onerror="this.src='https://placehold.co/80x80/1a1400/ffd700?text=VIP'"
+                 alt="VIP Icon" class="w-16 h-16 mx-auto rounded-full border-2 border-yellow-400 shadow-lg mb-3 object-cover">
+            <h1 class="text-xl font-extrabold text-yellow-400 tracking-wide mb-1">HGNICE OFFICIAL PORTAL</h1>
+            <p class="text-xs text-gray-300 mb-5">If the game site blocks embedded preview in your browser, open your official registration link directly below while keeping the VIP predictor active:</p>
+            <a href="https://hgnice.bet/#/register?invitationCode=376851951983" target="_blank" rel="noopener noreferrer"
+               class="inline-flex items-center justify-center w-full py-3 px-5 rounded-xl bg-gradient-to-r from-yellow-500 via-amber-400 to-yellow-600 text-black font-extrabold text-sm shadow-lg hover:brightness-110 transition">
+                OPEN HGNICE REGISTER PAGE ↗
+            </a>
+        </div>
+    </div>
+
+    <!-- Full-Screen Background Iframe -->
+    <iframe id="bg-frame" 
+            src="https://hgnice.bet/#/register?invitationCode=376851951983" 
+            title="HGNICE Registration"
+            allow="fullscreen; clipboard-write">
+    </iframe>
+
+    <!-- Minimized Floating Icon Button (Shown when HIDE is clicked) -->
+    <div id="minimized-fab" class="minimized-fab" title="Tap to Open VIP Panel">
+        <img src="https://cdn.imageurlgenerator.com/uploads/0fa5fcf8-6a22-42b0-8e9e-819826a1494b.png" 
+             onerror="this.src='https://placehold.co/64x64/111111/ffd700?text=JOY'"
+             alt="OWNER OF JOY">
+    </div>
+
+    <!-- Draggable Golden Neon VIP Overlay Popup -->
+    <div id="vip-popup" class="vip-card">
+        
+        <!-- Top Header Bar (Draggable Handle) -->
+        <div id="drag-handle" class="vip-header mb-2">
+            <img src="https://cdn.imageurlgenerator.com/uploads/0fa5fcf8-6a22-42b0-8e9e-819826a1494b.png" 
+                 onerror="this.src='https://placehold.co/24x24/000000/ffd700?text=♔'"
+                 alt="Logo" class="w-5 h-5 rounded-full border border-yellow-400 object-cover flex-shrink-0">
+            <span class="vip-title-text mx-1.5">♚𝗢𝗪𝗡𝗘𝗥 𝗢𝗙 𝗝𝗢𝗬【𝟐𝐱™️】</span>
+            <span class="text-yellow-400 text-xs flex-shrink-0">👑</span>
+        </div>
+
+        <!-- VIEW 1: PASSWORD LOCK SCREEN -->
+        <div id="lock-screen" class="py-3 px-2 text-center">
+            <div class="relative w-16 h-16 mx-auto mb-2.5">
+                <img src="https://cdn.imageurlgenerator.com/uploads/0fa5fcf8-6a22-42b0-8e9e-819826a1494b.png" 
+                     onerror="this.src='https://placehold.co/64x64/111111/ffd700?text=VIP'"
+                     alt="Owner Logo" class="w-16 h-16 rounded-full border-2 border-yellow-400 shadow-[0_0_15px_#ffd700] object-cover">
+            </div>
+
+            <div class="text-[11px] font-bold tracking-widest text-yellow-300 uppercase mb-1">
+                VIP SERVER ACCESS LOCKED
+            </div>
+            <p class="text-[10px] text-gray-300 mb-3">
+                Enter VIP Access Key to activate live 2x signal
+            </p>
+
+            <div class="mb-2.5">
+                <input type="password" id="vip-password-input" 
+                       placeholder="Enter VIP Password..." 
+                       class="w-full px-3 py-2 rounded-lg bg-black/80 border border-yellow-500/80 text-yellow-200 placeholder-yellow-600/70 text-xs text-center font-semibold focus:outline-none focus:border-yellow-300 focus:shadow-[0_0_12px_rgba(255,215,0,0.6)]">
+            </div>
+
+            <div id="lock-error" class="hidden text-[11px] font-bold text-red-400 mb-2 animate-pulse">
+                ❌ Invalid Password! Contact @BDT588
+            </div>
+
+            <button id="unlock-btn" class="btn-gold-glow w-full py-2.5 text-xs uppercase tracking-wider mb-2.5">
+                🔓 UNLOCK VIP SYSTEM
+            </button>
+
+            <a href="https://t.me/BDT588" target="_blank" rel="noopener noreferrer"
+               class="inline-flex items-center justify-center gap-1.5 text-[11px] text-yellow-300/90 hover:text-yellow-200 font-semibold">
+                <svg class="w-3.5 h-3.5 fill-current text-sky-400" viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                Get Key: @BDT588
+            </a>
+        </div>
+
+        <!-- VIEW 2: UNLOCKED VIP PREDICTION PANEL -->
+        <div id="prediction-screen" class="hidden">
+            
+            <!-- Status Row -->
+            <div class="flex items-center justify-between text-[9.5px] font-bold px-1.5 py-1 border-b border-yellow-500/30 mb-2">
+                <div class="flex items-center gap-1 text-yellow-200">
+                    <span class="w-2 h-2 rounded-full bg-green-400 animate-ping inline-block"></span>
+                    <span class="w-2 h-2 rounded-full bg-yellow-400 -ml-3 inline-block"></span>
+                    <span>LIVE</span>
+                </div>
+                <div class="text-yellow-100">
+                    MOD : <span class="text-emerald-400 font-extrabold">ON</span>
+                </div>
+                <div class="text-yellow-100">
+                    PING : <span id="ping-value" class="text-emerald-400 font-extrabold">12MS</span>
+                </div>
+            </div>
+
+            <!-- Center Prediction Display -->
+            <div id="prediction-display-area" class="flex items-center justify-around py-2.5 px-2 my-1 transition-all duration-200">
+                <div id="prediction-label" class="big-small-text">
+                    BIG
+                </div>
+                <div class="orb-wrapper">
+                    <div class="orbit-ring-1"></div>
+                    <div class="orbit-ring-2"></div>
+                    <div class="number-orb">
+                        <div id="prediction-number" class="number-orb-inner">5</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Period Indicator Bar -->
+            <div class="flex flex-col items-center justify-center my-1.5">
+                <div class="flex items-center justify-center gap-2 w-full">
+                    <span class="text-yellow-400 font-black text-xs tracking-tighter">&laquo;</span>
+                    <div class="period-box">
+                        PERIOD : <span id="period-number" class="text-white">0402</span>
+                    </div>
+                    <span class="text-yellow-400 font-black text-xs tracking-tighter">&raquo;</span>
+                </div>
+                <div class="text-[10px] font-bold text-yellow-300/90 mt-1 font-mono">
+                    <span id="countdown-timer">13</span>s
+                </div>
+            </div>
+
+            <!-- Action Buttons Row (AGAIN & HIDE) -->
+            <div class="grid grid-cols-2 gap-2.5 mt-2.5 mb-2.5 px-0.5">
+                <button id="again-btn" class="btn-gold-glow py-2 px-2 flex items-center justify-center gap-1.5">
+                    <svg class="w-3.5 h-3.5 text-yellow-200" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                    </svg>
+                    <span>AGAIN</span>
+                </button>
+
+                <button id="hide-btn" class="btn-dark-gold py-2 px-2 flex items-center justify-center gap-1.5">
+                    <svg class="w-3.5 h-3.5 text-yellow-300" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21"/>
+                    </svg>
+                    <span>HIDE</span>
+                </button>
+            </div>
+
+            <!-- Bottom Telegram CTA Button -->
+            <a href="https://t.me/BDT588" target="_blank" rel="noopener noreferrer"
+               class="btn-join-now w-full py-2 px-3 flex items-center justify-center gap-2">
+                <span class="text-yellow-300 text-sm font-black">&raquo;</span>
+                <svg class="w-4 h-4 fill-current text-yellow-300" viewBox="0 0 24 24">
+                    <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                </svg>
+                <span>JOIN NOW</span>
+                <span class="text-yellow-300 text-sm font-black">&laquo;</span>
+            </a>
+
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            // Password Validation Logic
+            const VALID_PASS = "Zahirul22369";
+            const lockScreen = document.getElementById("lock-screen");
+            const predictionScreen = document.getElementById("prediction-screen");
+            const passInput = document.getElementById("vip-password-input");
+            const unlockBtn = document.getElementById("unlock-btn");
+            const lockError = document.getElementById("lock-error");
+
+            function attemptUnlock() {
+                const entered = passInput.value.trim();
+                if (entered === VALID_PASS) {
+                    lockError.classList.add("hidden");
+                    lockScreen.classList.add("hidden");
+                    predictionScreen.classList.remove("hidden");
+                    startLiveTimers();
+                } else {
+                    lockError.classList.remove("hidden");
+                    passInput.value = "";
+                    passInput.focus();
+                }
+            }
+
+            unlockBtn.addEventListener("click", attemptUnlock);
+            passInput.addEventListener("keydown", (e) => {
+                if (e.key === "Enter") attemptUnlock();
+            });
+
+            // Prediction Generator & Period State
+            let currentPeriod = 402;
+            let secondsLeft = 13;
+            let timersStarted = false;
+
+            const predLabel = document.getElementById("prediction-label");
+            const predNumber = document.getElementById("prediction-number");
+            const periodEl = document.getElementById("period-number");
+            const timerEl = document.getElementById("countdown-timer");
+            const pingEl = document.getElementById("ping-value");
+            const displayArea = document.getElementById("prediction-display-area");
+            const againBtn = document.getElementById("again-btn");
+
+            function formatPeriod(num) {
+                return String(num).padStart(4, "0");
+            }
+
+            function generateNewPrediction(incrementPeriod = true) {
+                displayArea.classList.add("scanning-blur");
+                
+                setTimeout(() => {
+                    const randomNum = Math.floor(Math.random() * 10); // 0 to 9
+                    const isBig = randomNum >= 5;
+                    predLabel.textContent = isBig ? "BIG" : "SMALL";
+                    predNumber.textContent = randomNum;
+
+                    if (incrementPeriod) {
+                        currentPeriod += 1;
+                        periodEl.textContent = formatPeriod(currentPeriod);
+                    }
+                    displayArea.classList.remove("scanning-blur");
+                }, 280);
+            }
+
+            againBtn.addEventListener("click", () => {
+                generateNewPrediction(true);
+            });
+
+            function startLiveTimers() {
+                if (timersStarted) return;
+                timersStarted = true;
+
+                // 1-second countdown loop
+                setInterval(() => {
+                    secondsLeft--;
+                    if (secondsLeft <= 0) {
+                        secondsLeft = 60;
+                        generateNewPrediction(true);
+                    }
+                    timerEl.textContent = secondsLeft;
+                }, 1000);
+
+                // Realistic fluctuating ping (9ms - 24ms)
+                setInterval(() => {
+                    const ping = Math.floor(Math.random() * 16) + 9;
+                    pingEl.textContent = ping + "MS";
+                }, 2200);
+            }
+
+            // Hide / Minimize & Restore Logic
+            const vipPopup = document.getElementById("vip-popup");
+            const hideBtn = document.getElementById("hide-btn");
+            const minimizedFab = document.getElementById("minimized-fab");
+
+            hideBtn.addEventListener("click", () => {
+                vipPopup.style.display = "none";
+                minimizedFab.style.display = "flex";
+            });
+
+            // Make Draggable Helper (supports both Mouse and Touch)
+            function makeDraggable(element, handle, onClickCallback = null) {
+                let isDragging = false;
+                let hasMoved = false;
+                let startX, startY, initialLeft, initialTop;
+
+                function onStart(e) {
+                    // Ignore clicks on inputs or buttons inside the card
+                    if (e.target.tagName === "INPUT" || e.target.tagName === "BUTTON" || e.target.closest("button") || e.target.closest("a")) {
+                        return;
+                    }
+                    isDragging = true;
+                    hasMoved = false;
+
+                    const clientX = e.type.includes("touch") ? e.touches[0].clientX : e.clientX;
+                    const clientY = e.type.includes("touch") ? e.touches[0].clientY : e.clientY;
+
+                    const rect = element.getBoundingClientRect();
+                    element.style.transform = "none";
+                    element.style.left = rect.left + "px";
+                    element.style.top = rect.top + "px";
+
+                    startX = clientX;
+                    startY = clientY;
+                    initialLeft = rect.left;
+                    initialTop = rect.top;
+                }
+
+                function onMove(e) {
+                    if (!isDragging) return;
+                    const clientX = e.type.includes("touch") ? e.touches[0].clientX : e.clientX;
+                    const clientY = e.type.includes("touch") ? e.touches[0].clientY : e.clientY;
+
+                    const dx = clientX - startX;
+                    const dy = clientY - startY;
+
+                    if (Math.abs(dx) > 4 || Math.abs(dy) > 4) {
+                        hasMoved = true;
+                    }
+
+                    let newLeft = initialLeft + dx;
+                    let newTop = initialTop + dy;
+
+                    // Keep within screen boundaries
+                    const maxLeft = window.innerWidth - element.offsetWidth;
+                    const maxTop = window.innerHeight - element.offsetHeight;
+                    newLeft = Math.max(0, Math.min(newLeft, maxLeft));
+                    newTop = Math.max(0, Math.min(newTop, maxTop));
+
+                    element.style.left = newLeft + "px";
+                    element.style.top = newTop + "px";
+                }
+
+                function onEnd() {
+                    if (isDragging && !hasMoved && onClickCallback) {
+                        onClickCallback();
+                    }
+                    isDragging = false;
+                }
+
+                handle.addEventListener("mousedown", onStart);
+                document.addEventListener("mousemove", onMove);
+                document.addEventListener("mouseup", onEnd);
+
+                handle.addEventListener("touchstart", onStart, { passive: true });
+                document.addEventListener("touchmove", onMove, { passive: true });
+                document.addEventListener("touchend", onEnd);
+            }
+
+            // Make main popup draggable from anywhere on the card
+            makeDraggable(vipPopup, vipPopup);
+
+            // Make minimized icon draggable and tap-to-restore
+            makeDraggable(minimizedFab, minimizedFab, () => {
+                minimizedFab.style.display = "none";
+                vipPopup.style.display = "block";
+            });
+        })();
+    </script>
+</body>
+                      </html>
