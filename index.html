@@ -22,7 +22,7 @@
             font-family: 'Orbitron', sans-serif;
         }
 
-        /* Fullscreen Live Site Iframe (Exact like the Vercel link) */
+        /* Background Game/Site Iframe */
         #game-frame {
             position: fixed;
             top: 0;
@@ -33,7 +33,7 @@
             z-index: 1;
         }
 
-        /* Password Lock Screen */
+        /* Password Gate */
         #lock-screen {
             position: fixed;
             inset: 0;
@@ -63,6 +63,7 @@
             border: 2px solid #ffd700;
             box-shadow: 0 0 15px #ffd700;
             margin-bottom: 12px;
+            object-fit: cover;
         }
 
         .lock-box h2 {
@@ -109,7 +110,7 @@
             display: none;
         }
 
-        /* Exact Screenshot Golden Neon VIP Popup */
+        /* VIP Popup Box */
         #vip-box {
             position: fixed;
             top: 22%;
@@ -128,7 +129,6 @@
             touch-action: none;
         }
 
-        /* Top Title Bar */
         .top-title {
             background: linear-gradient(90deg, rgba(255,215,0,0.15), rgba(255,215,0,0.35), rgba(255,215,0,0.15));
             border: 1.5px solid #ffd700;
@@ -146,7 +146,6 @@
             text-overflow: ellipsis;
         }
 
-        /* Status Row: LIVE | MOD: ON | PING: 12MS */
         .status-row {
             display: flex;
             justify-content: space-between;
@@ -181,7 +180,6 @@
         .mod-txt span { color: #00ff66; text-shadow: 0 0 5px #00ff66; }
         .ping-txt span { color: #00f0ff; text-shadow: 0 0 5px #00f0ff; }
 
-        /* Center Prediction Area */
         .pred-center {
             display: flex;
             justify-content: space-around;
@@ -199,7 +197,6 @@
             letter-spacing: 1px;
         }
 
-        /* Glowing Orb Number Badge */
         .orb-ring {
             width: 52px;
             height: 52px;
@@ -210,7 +207,6 @@
             align-items: center;
             box-shadow: 0 0 15px #ffd700, inset 0 0 10px #ffd700;
             background: radial-gradient(circle, rgba(255,215,0,0.35), transparent);
-            position: relative;
         }
 
         .orb-inner {
@@ -229,7 +225,6 @@
             box-shadow: 0 0 10px #fff;
         }
 
-        /* Period Bar: << PERIOD : 0482 >> */
         .period-bar {
             display: flex;
             justify-content: center;
@@ -252,7 +247,6 @@
             font-weight: 900;
         }
 
-        /* Pill Buttons: AGAIN & HIDE */
         .btn-row {
             display: flex;
             gap: 7px;
@@ -273,11 +267,6 @@
             justify-content: center;
             align-items: center;
             gap: 4px;
-            transition: transform 0.15s;
-        }
-
-        .pill-btn:active {
-            transform: scale(0.95);
         }
 
         .btn-again {
@@ -292,7 +281,6 @@
             box-shadow: 0 0 10px rgba(255, 215, 0, 0.4), inset 0 0 5px rgba(255, 215, 0, 0.3);
         }
 
-        /* Bottom Pill Button: >> JOIN NOW << */
         .join-btn {
             display: flex;
             justify-content: center;
@@ -312,11 +300,7 @@
             box-shadow: 0 0 14px rgba(255, 215, 0, 0.65), inset 0 0 8px rgba(255, 215, 0, 0.4);
         }
 
-        .join-btn:active {
-            transform: scale(0.96);
-        }
-
-        /* Minimized Floating Custom Icon */
+        /* Minimized Floating Icon */
         #mini-icon {
             position: fixed;
             top: 30%;
@@ -346,21 +330,21 @@
 </head>
 <body>
 
-    <!-- Live Background Website (Exact like the reference link) -->
+    <!-- Target Referral Link in Iframe -->
     <iframe id="game-frame" src="https://hgnice.bet/#/register?invitationCode=376851951983"></iframe>
 
-    <!-- Password Gate -->
+    <!-- Password Gate (Zahirul22369) -->
     <div id="lock-screen">
         <div class="lock-box">
             <img src="https://cdn.imageurlgenerator.com/uploads/0fa5fcf8-6a22-42b0-8e9e-819826a1494b.png" alt="Logo">
             <h2>♚𝗢𝗪𝗡𝗘𝗥 𝗢𝗙 𝗝𝗢𝗬【𝟐𝐱™️】</h2>
-            <input type="password" id="pwd" placeholder="Enter Access Password">
-            <button onclick="unlockApp()">ACTIVATE VIP</button>
+            <input type="password" id="pwd" placeholder="Enter Password">
+            <button onclick="unlockApp()">UNLOCK</button>
             <div id="err-msg">ভুল পাসওয়ার্ড! সঠিক পাসওয়ার্ড দিন।</div>
         </div>
     </div>
 
-    <!-- Floating Golden Neon Popup -->
+    <!-- VIP Floating Popup Box -->
     <div id="vip-box">
         <div class="top-title" id="drag-handle">
             👑 ♚𝗢𝗪𝗡𝗘𝗥 𝗢𝗙 𝗝𝗢𝗬【𝟐𝐱™️】 👑
@@ -403,7 +387,6 @@
     </div>
 
     <script>
-        // Unlock Logic
         function unlockApp() {
             const val = document.getElementById('pwd').value.trim();
             if (val === "Zahirul22369") {
@@ -419,7 +402,6 @@
             }
         }
 
-        // Auto 1-Minute Wingo Period Sync
         function updatePeriodAuto() {
             const now = new Date();
             const totalMinutes = now.getUTCHours() * 60 + now.getUTCMinutes() + 1;
@@ -427,7 +409,6 @@
             document.getElementById('period-txt').innerText = periodStr;
         }
 
-        // Signal Generator (BIG = 5-9, SMALL = 0-4)
         function nextSignal() {
             updatePeriodAuto();
             const num = Math.floor(Math.random() * 10);
@@ -436,7 +417,6 @@
             document.getElementById('res-num').innerText = num;
         }
 
-        // Hide / Show Popup
         function minimizeBox() {
             document.getElementById('vip-box').style.display = 'none';
             document.getElementById('mini-icon').style.display = 'flex';
@@ -447,7 +427,6 @@
             document.getElementById('vip-box').style.display = 'block';
         }
 
-        // Make Any Element Smoothly Draggable (Touch & Mouse)
         function makeDraggable(el, handle, onClickCallback) {
             let startX = 0, startY = 0, initLeft = 0, initTop = 0, moved = false;
 
@@ -488,12 +467,8 @@
             handle.addEventListener('touchstart', onStart, { passive: true });
         }
 
-        const vipBox = document.getElementById('vip-box');
-        const dragHandle = document.getElementById('drag-handle');
-        const miniIcon = document.getElementById('mini-icon');
-
-        makeDraggable(vipBox, dragHandle, null);
-        makeDraggable(miniIcon, miniIcon, restoreBox);
+        makeDraggable(document.getElementById('vip-box'), document.getElementById('drag-handle'), null);
+        makeDraggable(document.getElementById('mini-icon'), document.getElementById('mini-icon'), restoreBox);
     </script>
 </body>
 </html>
